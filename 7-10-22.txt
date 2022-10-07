@@ -1,13 +1,34 @@
 reverse level order traversal
 
-INORDER TRAVERSAL:
+INORDER TRAVERSAL(iterative):
     1
    / \
    2  3
    /\ /\
   4 5 6 7
+4 2 5 1 6 3 7 
 so iterate while(stack !empty())
 if front of queue is not null then simply push front->left our first node and after that continue;
 else if null (no ode is actually we just pushed left and the left or right didnt exist)
 do pop()from stack after adding in resultant vector ans and add front->right
 note: if front->right is also null rec.tree will got to prev root as st.top and pop after adding right
+ 
+PREORDER TRAVERSAL(iterative):
+         1
+        / \
+       2  3
+      /\ /\
+     4 5 6 7
+ 1 2 4 5 3 6 7
+so iterate while(stack!empty)
+take out front as top of stack and push front->right and front->left in it so we can access left first (as stack uses LIFO)
+if(front->left==NULL and front ->right==NULL)then push front in ans and pop from stack();
+note check if right and left exists before putting in stack :)
+
+POSTORDER TRAVERSAL(iterative) :
+         1
+        / \
+       2  3
+      /\ /\
+     4 5 6 7
+ 1 2 4 5 3 6 7
